@@ -30,7 +30,6 @@ export default function Footer() {
       links: [
         { label: 'Início',       href: '#inicio' },
         { label: 'Sobre Bonito', href: '#sobre' },
-        { label: 'Contato',      href: '#contato' },
       ],
     },
   ]
@@ -58,12 +57,10 @@ export default function Footer() {
             <div className={styles.socials}>
               {[
                 { label: 'Instagram', path: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z M17.5 6.5h.01 M2 2h6l2 3H9v5H4V5H2V2z' },
-                { label: 'Facebook',  path: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z' },
-                { label: 'YouTube',   path: 'M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z' },
               ].map(({ label, path }) => (
                 <a
                   key={label}
-                  href="#contato"
+                  href="#"
                   className={styles.socialLink}
                   aria-label={label}
                   onClick={e => e.preventDefault()}

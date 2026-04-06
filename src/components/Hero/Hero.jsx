@@ -58,9 +58,8 @@ export default function Hero() {
         {/* Indicadores flutuantes */}
         <div className={styles.stats}>
           {[
-            { value: '50+',    label: 'Passeios' },
-            { value: '100%',   label: 'Natureza' },
-            { value: '4.9★',   label: 'Avaliação' },
+            { value: 'Águas',      label: 'Cristalinas' },
+            { value: 'Patrimônio', label: 'Natural' },
           ].map(stat => (
             <div key={stat.label} className={styles.statItem}>
               <strong>{stat.value}</strong>

@@ -8,17 +8,6 @@ const estatisticas = [
   {
     icone: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-    ),
-    valor: '50+',
-    label: 'Passeios',
-    descricao: 'Opções para todos os perfis de viajante',
-  },
-  {
-    icone: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
         <path d="M2 12h4m12 0h4M12 2v4m0 12v4"/>
         <circle cx="12" cy="12" r="3"/>

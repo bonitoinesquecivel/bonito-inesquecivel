@@ -26,11 +26,9 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { label: 'Início',     href: '#inicio' },
-    { label: 'Passeios',   href: '#destinos' },
-    { label: 'Hospedagem', href: '#destinos' },
-    { label: 'Sobre',      href: '#sobre' },
-    { label: 'Contato',    href: '#contato' },
+    { label: 'Início',    href: '#inicio' },
+    { label: 'Destinos',  href: '#destinos' },
+    { label: 'Sobre',     href: '#sobre' },
   ]
 
   return (
