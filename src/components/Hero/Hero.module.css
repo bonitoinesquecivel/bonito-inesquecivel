@@ -10,11 +10,12 @@
   justify-content: center;
   overflow: hidden;
 
-  /* Gradiente base: verde-mata para azul-cristal */
+  /* Gradiente base e imagem de fundo fornecida */
   background:
     radial-gradient(ellipse 120% 80% at 70% 30%, rgba(79,195,208,.35) 0%, transparent 60%),
     radial-gradient(ellipse 90% 70% at 10% 80%, rgba(212,169,90,.2) 0%, transparent 50%),
-    linear-gradient(155deg, var(--color-verde-dark) 0%, var(--color-verde) 45%, #1e5f47 100%);
+    linear-gradient(155deg, rgba(8, 20, 15, 0.5) 0%, rgba(13, 36, 26, 0.4) 45%, rgba(30, 95, 71, 0.5) 100%),
+    url('/hero-bg.jpg') center/cover no-repeat;
 }
 
 /* ---- Camadas decorativas ---- */
@@ -102,9 +103,9 @@
   display: inline-block;
   padding: 0.35rem 1rem;
   border-radius: 999px;
-  background: rgba(79,195,208,.2);
-  border: 1px solid rgba(79,195,208,.4);
-  color: var(--color-cristal);
+  background: rgba(212,169,90,.2);
+  border: 1px solid rgba(212,169,90,.5);
+  color: var(--color-areia);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -129,7 +130,7 @@
 
 .subtitle {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(255,255,255,.78);
+  color: var(--color-white);
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 2.5rem;

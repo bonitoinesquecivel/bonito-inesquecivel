@@ -53,24 +53,6 @@ export default function Footer() {
               Natureza, aventura e hospitalidade em cada experiência.
             </p>
 
-            {/* Redes sociais (ícones SVG) */}
-            <div className={styles.socials}>
-              {[
-                { label: 'Instagram', path: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z M17.5 6.5h.01 M2 2h6l2 3H9v5H4V5H2V2z' },
-              ].map(({ label, path }) => (
-                <a
-                  key={label}
-                  href="#"
-                  className={styles.socialLink}
-                  aria-label={label}
-                  onClick={e => e.preventDefault()}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d={path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links agrupados */}

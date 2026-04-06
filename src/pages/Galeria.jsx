@@ -5,12 +5,7 @@ import Header from '../components/Header/Header.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import styles from './Galeria.module.css'
 
-/* Gera 12 placeholders de foto */
-const TOTAL_FOTOS = 12
-const fotos = Array.from({ length: TOTAL_FOTOS }, (_, i) => ({
-  id: i + 1,
-  label: `Foto ${i + 1}`,
-}))
+
 
 /* ============================================================
    GALERIA — página dinâmica por slug, com Lightbox puro React
@@ -20,6 +15,12 @@ export default function Galeria() {
   const navigate = useNavigate()
   const destino = destinos.find(d => d.slug === slug)
 
+  const galeriaFotos = destino?.fotos?.length
+    ? destino.fotos.map((url, i) => ({ id: i + 1, label: `Foto ${i + 1}`, url }))
+    : Array.from({ length: 12 }, (_, i) => ({ id: i + 1, label: `Foto ${i + 1}`, url: null }))
+
+  const TOTAL_FOTOS = galeriaFotos.length
+
   /* Estado do lightbox: null = fechado, número = índice ativo */
   const [lightboxIndex, setLightboxIndex] = useState(null)
 
@@ -28,11 +29,11 @@ export default function Galeria() {
 
   const proximaFoto = useCallback(() => {
     setLightboxIndex(prev => (prev + 1) % TOTAL_FOTOS)
-  }, [])
+  }, [TOTAL_FOTOS])
 
   const fotoAnterior = useCallback(() => {
     setLightboxIndex(prev => (prev - 1 + TOTAL_FOTOS) % TOTAL_FOTOS)
-  }, [])
+  }, [TOTAL_FOTOS])
 
   /* ---- Lightbox: teclado (ESC, ←, →) ---- */
   useEffect(() => {
@@ -87,7 +88,14 @@ export default function Galeria() {
         {/* ---- Hero da galeria ---- */}
         <div
           className={styles.galeriaHero}
-          style={{ '--destino-color': destino.cor }}
+          style={{
+            '--destino-color': destino.cor,
+            ...(galeriaFotos[0]?.url && {
+              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(${galeriaFotos[0].url})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            })
+          }}
         >
           <div className={styles.galeriaHeroInner}>
             {/* Botão voltar */}
@@ -101,15 +109,6 @@ export default function Galeria() {
               </svg>
               Voltar
             </button>
-
-            {/* Ícone decorativo */}
-            <div
-              className={styles.heroIcone}
-              style={{ background: destino.cor }}
-              aria-hidden="true"
-            >
-              {iniciais}
-            </div>
 
             {/* Título e meta */}
             <span className={styles.heroCat}>{destino.categoria}</span>
@@ -125,23 +124,26 @@ export default function Galeria() {
         <section className={styles.galeriaSection}>
           <div className={styles.galeriaContainer}>
             <ul className={styles.galeriaGrid} role="list">
-              {fotos.map((foto, idx) => (
+              {galeriaFotos.map((foto, idx) => (
                 <li key={foto.id}>
                   <button
                     className={styles.fotoCard}
-                    style={{ '--card-color': destino.cor }}
+                    style={{
+                      '--card-color': destino.cor,
+                      ...(foto.url && { backgroundImage: `url(${foto.url})`, backgroundSize: 'cover', backgroundPosition: 'center' })
+                    }}
                     onClick={() => setLightboxIndex(idx)}
                     aria-label={`Abrir ${foto.label} de ${destino.nome}`}
                   >
-                    {/* Placeholder visual */}
-                    <div className={styles.fotoPlaceholder} aria-hidden="true">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.5" strokeLinecap="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <polyline points="21 15 16 10 5 21"/>
-                      </svg>
-                    </div>
-                    <span className={styles.fotoLabel}>{foto.label}</span>
+                    {!foto.url && (
+                      <div className={styles.fotoPlaceholder} aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.5" strokeLinecap="round">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                          <circle cx="8.5" cy="8.5" r="1.5"/>
+                          <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                      </div>
+                    )}
                   </button>
                 </li>
               ))}
@@ -156,7 +158,7 @@ export default function Galeria() {
           className={styles.lightboxOverlay}
           role="dialog"
           aria-modal="true"
-          aria-label={`Lightbox: ${fotos[lightboxIndex].label}`}
+          aria-label={`Lightbox: ${galeriaFotos[lightboxIndex].label}`}
           onClick={fecharLightbox}
         >
           {/* Parar propagação para clicar dentro sem fechar */}
@@ -187,21 +189,22 @@ export default function Galeria() {
               </svg>
             </button>
 
-            {/* Imagem placeholder */}
+            {/* Imagem lightbox */}
             <div
               className={styles.lightboxImagem}
-              style={{ '--lb-color': destino.cor }}
-              aria-label={fotos[lightboxIndex].label}
+              style={{
+                '--lb-color': destino.cor,
+                ...(galeriaFotos[lightboxIndex].url && { backgroundImage: `url(${galeriaFotos[lightboxIndex].url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' })
+              }}
+              aria-label={galeriaFotos[lightboxIndex].label}
             >
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" strokeWidth="1.2" strokeLinecap="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span className={styles.lightboxFotoLabel}>
-                {fotos[lightboxIndex].label}
-              </span>
-              <span className={styles.lightboxSubLabel}>{destino.nome}</span>
+              {!galeriaFotos[lightboxIndex].url && (
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" strokeWidth="1.2" strokeLinecap="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              )}
             </div>
 
             {/* Seta próxima */}
@@ -222,11 +225,14 @@ export default function Galeria() {
 
             {/* Miniaturas navegáveis */}
             <div className={styles.lightboxThumbs}>
-              {fotos.map((f, idx) => (
+              {galeriaFotos.map((f, idx) => (
                 <button
                   key={f.id}
                   className={`${styles.lightboxThumb} ${idx === lightboxIndex ? styles.lightboxThumbActive : ''}`}
-                  style={{ '--lb-color': destino.cor }}
+                  style={{
+                    '--lb-color': destino.cor,
+                    ...(f.url && { backgroundImage: `url(${f.url})`, backgroundSize: 'cover', backgroundPosition: 'center' })
+                  }}
                   onClick={() => setLightboxIndex(idx)}
                   aria-label={f.label}
                   aria-current={idx === lightboxIndex ? 'true' : undefined}

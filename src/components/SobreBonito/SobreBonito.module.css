@@ -64,7 +64,9 @@
 .visualCard {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-verde) 0%, #1a5c45 60%, #0f3d2a 100%);
+  background: 
+    linear-gradient(135deg, rgba(8, 38, 27, 0.4) 0%, rgba(26, 92, 69, 0.3) 60%, rgba(15, 61, 42, 0.5) 100%),
+    url('/sobre-img.jpg') center/cover no-repeat;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -131,7 +133,7 @@
   position: relative;
   display: block;
   font-size: 0.78rem;
-  color: rgba(79,195,208,.85);
+  color: var(--color-white);
   letter-spacing: 0.08em;
   margin-top: 0.4rem;
   z-index: 3;

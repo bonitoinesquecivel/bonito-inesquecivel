@@ -38,7 +38,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Passeios, hospedagens e experiências únicas<br className={styles.brDesktop} />
+          Passeios, hospedagens e experiências únicas{' '}
+          <br className={styles.brDesktop} />
           no coração do Pantanal
         </p>
 

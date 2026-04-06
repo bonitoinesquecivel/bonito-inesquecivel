@@ -29,25 +29,30 @@ export default function DestinoCard({ destino }) {
       {/* Área visual com cor única + iniciais */}
       <div
         className={styles.visual}
-        style={{ '--card-color': destino.cor }}
+        style={{
+          '--card-color': destino.cor,
+          ...(destino.imagemPrincipal && { backgroundImage: `url(${destino.imagemPrincipal})`, backgroundSize: 'cover', backgroundPosition: 'center' })
+        }}
         aria-hidden="true"
       >
-        <span className={styles.iniciais}>{iniciais}</span>
+        {!destino.imagemPrincipal && <span className={styles.iniciais}>{iniciais}</span>}
 
         {/* Padrão pontilhado decorativo */}
-        <svg className={styles.pattern} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          {Array.from({ length: 6 }, (_, row) =>
-            Array.from({ length: 6 }, (_, col) => (
-              <circle
-                key={`${row}-${col}`}
-                cx={20 + col * 32}
-                cy={20 + row * 32}
-                r="2.5"
-                fill="rgba(255,255,255,.18)"
-              />
-            ))
-          )}
-        </svg>
+        {!destino.imagemPrincipal && (
+          <svg className={styles.pattern} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            {Array.from({ length: 6 }, (_, row) =>
+              Array.from({ length: 6 }, (_, col) => (
+                <circle
+                  key={`${row}-${col}`}
+                  cx={20 + col * 32}
+                  cy={20 + row * 32}
+                  r="2.5"
+                  fill="rgba(255,255,255,.18)"
+                />
+              ))
+            )}
+          </svg>
+        )}
 
         {/* Tag de categoria */}
         <span className={styles.categoriaTag}>{destino.categoria}</span>
