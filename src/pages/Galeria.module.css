@@ -1,0 +1,360 @@
+/* ============================================================
+   GALERIA PAGE
+   ============================================================ */
+
+/* ---- Destino não encontrado ---- */
+.notFound {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-family: var(--font-body);
+}
+
+.notFound h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-verde);
+}
+
+/* ---- Main ---- */
+.main {
+  min-height: 100dvh;
+}
+
+/* ---- Hero da galeria ---- */
+.galeriaHero {
+  padding: 7rem 1.5rem 4rem;
+  background:
+    radial-gradient(ellipse 100% 80% at 80% 20%, rgba(79,195,208,.25) 0%, transparent 55%),
+    linear-gradient(150deg, var(--color-verde-dark) 0%, var(--color-verde) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.galeriaHero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-gelo);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.galeriaHeroInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Botão voltar */
+.voltarBtn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.8);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.voltarBtn:hover {
+  background: rgba(255,255,255,.2);
+  color: var(--color-white);
+}
+
+/* Ícone */
+.heroIcone {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: rgba(255,255,255,.9);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  margin-bottom: 0.5rem;
+}
+
+.heroCat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cristal);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--color-white);
+  line-height: 1.15;
+}
+
+.heroDesc {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.fotosBadge {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(79,195,208,.2);
+  border: 1px solid rgba(79,195,208,.3);
+  color: var(--color-cristal);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ---- Grid de fotos ---- */
+.galeriaSection {
+  background: var(--color-gelo);
+  padding: 3rem 1.5rem 5rem;
+}
+
+.galeriaContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.galeriaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ---- Card de foto ---- */
+.fotoCard {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  /* Gradiente baseado na cor do destino */
+  background:
+    linear-gradient(160deg, var(--card-color, var(--color-verde)) 0%, color-mix(in srgb, var(--card-color, var(--color-verde)) 70%, black) 100%);
+
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: none;
+}
+
+.fotoCard:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+.fotoCard:focus-visible {
+  outline: 3px solid var(--color-cristal);
+  outline-offset: 2px;
+}
+
+.fotoPlaceholder {
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.fotoCard:hover .fotoPlaceholder {
+  opacity: 0.7;
+}
+
+.fotoLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+/* ---- Lightbox ---- */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightboxContent {
+  position: relative;
+  width: min(800px, 94vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  animation: scaleIn .25s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Botão fechar */
+.lightboxClose {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  color: var(--color-white);
+  border: 1px solid rgba(255,255,255,.2);
+  transition: background var(--transition);
+}
+
+.lightboxClose:hover {
+  background: rgba(255,255,255,.2);
+}
+
+/* Imagem principal */
+.lightboxImagem {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(150deg, var(--lb-color, var(--color-verde)) 0%, color-mix(in srgb, var(--lb-color, var(--color-verde)) 60%, black) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  position: relative;
+}
+
+.lightboxFotoLabel {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: rgba(255,255,255,.8);
+}
+
+.lightboxSubLabel {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,.45);
+  letter-spacing: 0.08em;
+}
+
+/* Botões de navegação */
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: var(--color-white);
+  transition: background var(--transition);
+  z-index: 2;
+}
+
+.lightboxNav:hover {
+  background: rgba(255,255,255,.25);
+}
+
+.lightboxPrev { left: -1.5rem; }
+.lightboxNext { right: -1.5rem; }
+
+/* Contador */
+.lightboxCounter {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.5);
+  letter-spacing: 0.06em;
+}
+
+/* Miniaturas */
+.lightboxThumbs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.lightboxThumb {
+  width: 40px;
+  height: 28px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--lb-color, var(--color-verde)) 50%, rgba(255,255,255,.15));
+  border: 2px solid transparent;
+  transition: border-color var(--transition), opacity var(--transition);
+  cursor: pointer;
+  opacity: 0.45;
+}
+
+.lightboxThumbActive {
+  border-color: var(--color-cristal);
+  opacity: 1;
+}
+
+.lightboxThumb:hover {
+  opacity: 0.8;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .galeriaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lightboxPrev { left: 0.25rem; }
+  .lightboxNext { right: 0.25rem; }
+}
+
+@media (max-width: 480px) {
+  .galeriaHero {
+    padding: 6rem 1.5rem 3.5rem;
+  }
+
+  .lightboxThumbs {
+    display: none;
+  }
+}

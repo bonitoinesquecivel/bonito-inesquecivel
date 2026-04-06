@@ -1,0 +1,156 @@
+/* ============================================================
+   DESTINO CARD
+   ============================================================ */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---- Área visual ---- */
+.visual {
+  position: relative;
+  height: 200px;
+  background: var(--card-color, var(--color-verde));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Gradiente escurecendo base para legibilidade dos botões */
+  background-image:
+    radial-gradient(ellipse 140% 100% at 50% 0%, rgba(255,255,255,.12) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 50%, rgba(0,0,0,.25) 100%);
+  background-color: var(--card-color, var(--color-verde));
+}
+
+/* Iniciais centrais */
+.iniciais {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  color: rgba(255,255,255,.22);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  user-select: none;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.card:hover .iniciais {
+  opacity: 0.1;
+}
+
+/* Padrão de pontos */
+.pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Tag de categoria */
+.categoriaTag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(8px);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.25);
+  transition: background var(--transition);
+}
+
+.card:hover .categoriaTag {
+  background: rgba(255,255,255,.3);
+}
+
+/* Botão "Ver Galeria" — hidden por padrão, aparece no hover */
+.galeriaBtn {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-verde-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  transition: opacity var(--transition), transform var(--transition), background var(--transition);
+}
+
+.card:hover .galeriaBtn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.galeriaBtn:hover {
+  background: var(--color-gelo);
+}
+
+/* ---- Info textual ---- */
+.info {
+  padding: 1.25rem 1.4rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.nome {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--color-verde);
+  line-height: 1.25;
+}
+
+.descricao {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .visual {
+    height: 180px;
+  }
+
+  /* Em mobile, galeriaBtn sempre visível */
+  .galeriaBtn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .iniciais {
+    opacity: 0.15;
+  }
+}

@@ -1,0 +1,181 @@
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.header.scrolled {
+  background: var(--color-verde);
+  box-shadow: 0 2px 20px rgba(0,0,0,.25);
+}
+
+/* ---- Inner layout ---- */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+/* ---- Logo ---- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.logoIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--color-cristal);
+  color: var(--color-verde-dark);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.logoText strong {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-areia);
+}
+
+/* ---- Desktop nav ---- */
+.nav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navLink {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: rgba(255,255,255,.85);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition), background var(--transition);
+}
+
+.navLink:hover {
+  color: var(--color-white);
+  background: rgba(255,255,255,.1);
+}
+
+/* ---- Mobile hamburger button ---- */
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.1);
+  transition: background var(--transition);
+}
+
+.menuBtn:hover {
+  background: rgba(255,255,255,.2);
+}
+
+.menuBtn span {
+  display: block;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition), width var(--transition);
+  transform-origin: center;
+}
+
+.menuBtnOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menuBtnOpen span:nth-child(2) {
+  opacity: 0;
+}
+.menuBtnOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- Mobile nav dropdown ---- */
+.mobileNav {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-verde-dark);
+  transition: max-height 0.35s ease;
+}
+
+.mobileNavOpen {
+  max-height: 400px;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem 1.25rem;
+  gap: 0.25rem;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 0.7rem 0.5rem;
+  color: rgba(255,255,255,.85);
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: color var(--transition);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-cristal);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+
+  .logoText {
+    font-size: 0.8rem;
+  }
+
+  .logoText strong {
+    font-size: 0.88rem;
+  }
+}
