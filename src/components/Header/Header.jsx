@@ -38,7 +38,8 @@ export default function Header() {
         <Link to="/" className={styles.logo} aria-label="Bonito Inesquecível Oficial — Home">
           <span className={styles.logoIcon}>B</span>
           <span className={styles.logoText}>
-            Bonito <strong>Inesquecível</strong>
+            Bonito e <strong>Pantanal</strong>
+            <span style={{ fontSize: '0.65em' }}>Mato Grosso do Sul</span>
           </span>
         </Link>
 

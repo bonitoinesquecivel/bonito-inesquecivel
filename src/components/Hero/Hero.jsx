@@ -33,14 +33,14 @@ export default function Hero() {
         <span className={styles.badge}>Bonito · Mato Grosso do Sul</span>
 
         <h1 className={styles.headline}>
-          Descubra o paraíso<br />
-          <em>natural de Bonito, MS</em>
+          Dois destinos no<br />
+          <em>coração do Brasil</em>
         </h1>
 
         <p className={styles.subtitle}>
-          Passeios, hospedagens e experiências únicas{' '}
+          Passeios, hospedagem e experiências únicas{' '}
           <br className={styles.brDesktop} />
-          no coração do Pantanal
+          em Bonito e Pantanal
         </p>
 
         <div className={styles.actions}>
@@ -51,7 +51,7 @@ export default function Hero() {
               <polyline points="19 12 12 19 5 12"/>
             </svg>
           </button>
-          <a href="#sobre" className={styles.ctaSecondary}>
+          <a href="https://wa.me/5567992834917" target="_blank" rel="noopener noreferrer" className={styles.ctaSecondary}>
             Saiba mais
           </a>
         </div>

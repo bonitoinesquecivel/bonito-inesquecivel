@@ -37,10 +37,10 @@ export default function SobreBonito() {
         <div className={styles.layout}>
           {/* Coluna esquerda — texto */}
           <div className={styles.textCol}>
-            <span className={styles.eyebrow}>Sobre o destino</span>
+            <span className={styles.eyebrow}>Sobre os destinos</span>
             <h2 className={styles.title}>
-              Bonito: onde a natureza<br />
-              <em>revela seus segredos</em>
+              Bonito e Pantanal: a natureza<br />
+              <em>em sua forma mais selvagem</em>
             </h2>
             <p className={styles.body}>
               Encravado no coração do Mato Grosso do Sul, Bonito é reconhecido
@@ -50,10 +50,11 @@ export default function SobreBonito() {
               cardumes coloridos sem precisar ir ao mar.
             </p>
             <p className={styles.body}>
-              A Chapada do Pantanal abraça a cidade com cachoeiras, grutas e
-              dolinas habitadas por araras e tucanos. Cada trilha é uma revelação;
-              cada pôr do sol, uma tela viva. Aqui, o turismo sustentável não é
-              tendência — é tradição.
+              O Pantanal é a maior planície alagável do planeta, um santuário
+              ecológico onde a vida selvagem vibra em cada canto. Safáris
+              fotográficos e passeios de chalana oferecem o espetáculo do
+              encontro com onças-pintadas, tuiuiús e a rica fauna brasileira.
+              Juntos, Bonito e Pantanal formam uma experiência inesquecível.
             </p>
           </div>
 
@@ -70,12 +71,12 @@ export default function SobreBonito() {
             </div>
             {/* Card flutuante decorativo */}
             <div className={styles.floatCard}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-cristal)" strokeWidth="2" strokeLinecap="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F1C40F" strokeWidth="2" strokeLinecap="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
               <div>
-                <strong>Certificado Sustentável</strong>
-                <span>Ecoturismo de base comunitária</span>
+                <strong>Melhor destino turístico do Brasil</strong>
+                <span>Reconhecimento Nacional</span>
               </div>
             </div>
           </div>

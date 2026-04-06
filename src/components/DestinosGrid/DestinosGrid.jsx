@@ -11,7 +11,7 @@ export default function DestinosGrid() {
       <div className={styles.container}>
         {/* Cabeçalho da seção */}
         <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>Explore o melhor de Bonito</span>
+          <span className={styles.eyebrow}>Explore o melhor de Bonito e Pantanal</span>
           <h2 className={styles.title}>Nossos Destinos</h2>
           <p className={styles.subtitle}>
             De cachoeiras a cavernas, de pousadas ao Pantanal — cada lugar conta uma história única.
