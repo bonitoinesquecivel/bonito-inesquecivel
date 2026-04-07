@@ -148,6 +148,30 @@
   gap: 1rem;
 }
 
+.galeriaGridCentered {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.galeriaGridCentered > li {
+  flex: 0 1 calc(25% - 0.75rem);
+}
+
+.mapaContainer {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.mapaTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-verde);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
 /* ---- Card de foto ---- */
 .fotoCard {
   aspect-ratio: 4 / 3;
@@ -343,6 +367,10 @@
 @media (max-width: 768px) {
   .galeriaGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeriaGridCentered > li {
+    flex: 0 1 calc(50% - 0.5rem);
   }
 
   .lightboxPrev { left: 0.25rem; }

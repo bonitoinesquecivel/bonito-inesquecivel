@@ -5,7 +5,7 @@ import Galeria from './pages/Galeria.jsx'
 /* Rotas principais da aplicação */
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/galeria/:slug" element={<Galeria />} />

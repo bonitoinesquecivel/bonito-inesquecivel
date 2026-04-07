@@ -123,7 +123,7 @@ export default function Galeria() {
         {/* ---- Grid de fotos ---- */}
         <section className={styles.galeriaSection}>
           <div className={styles.galeriaContainer}>
-            <ul className={styles.galeriaGrid} role="list">
+            <ul className={galeriaFotos.length <= 3 ? styles.galeriaGridCentered : styles.galeriaGrid} role="list">
               {galeriaFotos.map((foto, idx) => (
                 <li key={foto.id}>
                   <button
@@ -148,6 +148,22 @@ export default function Galeria() {
                 </li>
               ))}
             </ul>
+
+            {destino.mapaIframe && (
+              <div className={styles.mapaContainer}>
+                <h2 className={styles.mapaTitle}>Veja no Mapa</h2>
+                <iframe
+                  src={destino.mapaIframe}
+                  width="100%"
+                  height="450"
+                  style={{ border: 0, borderRadius: 'var(--radius-md)', marginTop: '1.5rem', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Mapa para ${destino.nome}`}
+                ></iframe>
+              </div>
+            )}
           </div>
         </section>
       </main>

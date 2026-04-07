@@ -31,7 +31,7 @@ const destinos = [
     "slug": "parque-das-cachoeiras",
     "categoria": "Trilha e Cachoeiras",
     "cor": "#0F3D2A",
-    "descricao": "Trilha ecológica passeando por belíssimas quedas do Rio Mimoso com acesso direto para banho."
+    "descricao": "Trilha ecológica passeando por belíssimas quedas do Rio Mimoso com acesso direto para banho.",
     "imagemPrincipal": "/parque-das-cachoeiras/foto-4.jpg",
     "fotos": [
       "/parque-das-cachoeiras/foto-1.jpg",
@@ -130,7 +130,6 @@ const destinos = [
       "/hotel-da-praca/foto-1.jpg",
       "/hotel-da-praca/foto-2.jpg",
       "/hotel-da-praca/foto-3.jpg",
-      "/hotel-da-praca/foto-4.jpg",
       "/hotel-da-praca/foto-5.jpg",
       "/hotel-da-praca/foto-6.jpg",
       "/hotel-da-praca/foto-7.jpg",
@@ -170,7 +169,8 @@ const destinos = [
     "slug": "shopping-china",
     "categoria": "Compras & Lazer",
     "cor": "#0F3D2A",
-    "descricao": "O maior e mais famoso complexo de compras de produtos importados situado na fronteira com o Paraguai. [Veja no mapa como chegar lá!]",
+    "descricao": "O maior e mais famoso complexo de compras de produtos importados situado na fronteira com o Paraguai.",
+    "mapaIframe": "https://maps.google.com/maps?q=Shopping%20China%20Importados%20-%20Pedro%20Juan%20Caballero&t=&z=15&ie=UTF8&iwloc=&output=embed",
     "fotos": [
       "/shopping-china/foto-1.jpg",
       "/shopping-china/foto-2.jpg",
@@ -189,6 +189,46 @@ const destinos = [
       "/hotel-pousada-do-bosque/imgi_104_area-de-lazer-da-pousada.jpg"
     ],
     "imagemPrincipal": "/hotel-pousada-do-bosque/imgi_104_area-de-lazer-da-pousada.jpg"
+  },
+  {
+    "id": 11,
+    "nome": "Hotel Arte da Natureza",
+    "slug": "hotel-arte-da-natureza",
+    "categoria": "Hospedagem",
+    "cor": "#0F3D2A",
+    "descricao": "Hospedagem sofisticada com piscinas espetaculares, aliando elegância e a beleza natural característica de Bonito.",
+    "fotos": [
+      "/hotel-arte-da-natureza/foto-1.jpg",
+      "/hotel-arte-da-natureza/foto-2.jpg",
+      "/hotel-arte-da-natureza/foto-3.jpg",
+      "/hotel-arte-da-natureza/foto-4.jpg",
+      "/hotel-arte-da-natureza/foto-5.jpg",
+      "/hotel-arte-da-natureza/foto-6.jpg",
+      "/hotel-arte-da-natureza/foto-7.jpg",
+      "/hotel-arte-da-natureza/foto-8.jpg",
+      "/hotel-arte-da-natureza/foto-9.jpg"
+    ],
+    "imagemPrincipal": "/hotel-arte-da-natureza/foto-1.jpg"
+  },
+  {
+    "id": 12,
+    "nome": "Hotel Pousada Águas de Bonito",
+    "slug": "hotel-aguas-de-bonito",
+    "categoria": "Hospedagem",
+    "cor": "#0F3D2A",
+    "descricao": "Uma pousada com estrutura completa de lazer e descanso, ideal para revigorar as energias no coração de Bonito.",
+    "fotos": [
+      "/hotel-aguas-de-bonito/foto-1.jpg",
+      "/hotel-aguas-de-bonito/foto-2.jpg",
+      "/hotel-aguas-de-bonito/foto-3.jpg",
+      "/hotel-aguas-de-bonito/foto-4.jpg",
+      "/hotel-aguas-de-bonito/foto-5.jpg",
+      "/hotel-aguas-de-bonito/foto-6.jpg",
+      "/hotel-aguas-de-bonito/foto-7.jpg",
+      "/hotel-aguas-de-bonito/foto-8.jpg",
+      "/hotel-aguas-de-bonito/foto-9.jpg"
+    ],
+    "imagemPrincipal": "/hotel-aguas-de-bonito/foto-1.jpg"
   }
 ]
 

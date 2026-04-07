@@ -64,9 +64,9 @@
 .visualCard {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: 
+  background:
     linear-gradient(135deg, rgba(8, 38, 27, 0.4) 0%, rgba(26, 92, 69, 0.3) 60%, rgba(15, 61, 42, 0.5) 100%),
-    url('/sobre-img.jpg') center/cover no-repeat;
+    url('/sobre-img.jpeg') center/cover no-repeat;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(79,195,208,.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(79, 195, 208, .3) 0%, transparent 70%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -95,7 +95,7 @@
 .ripple2 {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(79,195,208,.25);
+  border: 1.5px solid rgba(79, 195, 208, .25);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -115,8 +115,15 @@
 }
 
 @keyframes rippleOut {
-  0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
 }
 
 .visualText {
@@ -126,7 +133,7 @@
   font-size: 2.2rem;
   color: var(--color-white);
   z-index: 3;
-  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .4);
 }
 
 .visualSub {
@@ -190,7 +197,7 @@
   padding: 1.75rem;
   border-radius: var(--radius-md);
   background: var(--color-gelo);
-  border: 1px solid rgba(27,58,45,.08);
+  border: 1px solid rgba(27, 58, 45, .08);
   transition: box-shadow var(--transition), transform var(--transition);
 }
 
