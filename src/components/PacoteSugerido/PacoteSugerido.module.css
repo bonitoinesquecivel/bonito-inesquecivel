@@ -48,9 +48,10 @@
 /* ---------- Carrossel / grid ---------- */
 .carousel {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding-bottom: 1rem;
-  overflow-x: visible;
   scrollbar-width: none;
 }
 
@@ -59,7 +60,8 @@
 }
 
 .item {
-  flex: 1 1 0;
+  /* Desktop: 3 por linha — os 2 da segunda linha ficam centralizados */
+  flex: 0 0 calc((100% - 2rem) / 3);
   min-width: 0;
   scroll-snap-align: start;
   list-style: none;
@@ -222,9 +224,11 @@
 
 /* ---------- Responsivo ---------- */
 
-/* Tablet e abaixo: ativa carrossel com scroll */
+/* Tablet e abaixo: desativa grid, ativa carrossel com scroll */
 @media (max-width: 1099px) {
   .carousel {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-left: 1.5rem;
