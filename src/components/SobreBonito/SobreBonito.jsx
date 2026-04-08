@@ -39,8 +39,7 @@ export default function SobreBonito() {
           <div className={styles.textCol}>
             <span className={styles.eyebrow}>Sobre os destinos</span>
             <h2 className={styles.title}>
-              Bonito e Pantanal: a natureza<br />
-              <em>em sua forma mais selvagem</em>
+              Bonito e Pantanal: a natureza <em>em sua forma&nbsp;mais selvagem</em>
             </h2>
             <p className={styles.body}>
               Encravado no coração do Mato Grosso do Sul, Bonito é reconhecido

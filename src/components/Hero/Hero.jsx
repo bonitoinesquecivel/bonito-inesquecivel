@@ -30,7 +30,9 @@ export default function Hero() {
 
       {/* Conteúdo central */}
       <div className={styles.content}>
-        <span className={styles.badge}>Bonito · Mato Grosso do Sul</span>
+        <span className={styles.badge}>
+          Bonito · Pantanal <br /> Mato Grosso do Sul
+        </span>
 
         <h1 className={styles.headline}>
           Dois destinos no<br />

@@ -21,8 +21,11 @@ const destinos = [
       "/praia-da-figueira/foto-5.jpg",
       "/praia-da-figueira/foto-6.jpg",
       "/praia-da-figueira/foto-7.jpg",
-      "/praia-da-figueira/foto-9.jpg",
-      "/praia-da-figueira/foto-10.jpg"
+      "/praia-da-figueira/foto-9.jpeg",
+      "/praia-da-figueira/foto-10.jpg",
+      "/praia-da-figueira/foto-11.jpg",
+      "/praia-da-figueira/foto-12.jpg",
+      "/praia-da-figueira/foto-13.jpg"
     ]
   },
   {
@@ -102,7 +105,7 @@ const destinos = [
     "id": 6,
     "nome": "Pantanal Jungle Lodge",
     "slug": "pantanal-jungle-lodge",
-    "categoria": "Pantanal",
+    "categoria": "Ecoturismo",
     "cor": "#0F3D2A",
     "descricao": "Hospedagem rústica em palafitas às margens do Rio Miranda para imersão e safári no coração do Pantanal.",
     "fotos": [
@@ -123,7 +126,7 @@ const destinos = [
     "id": 7,
     "nome": "Hotel da Praça",
     "slug": "hotel-da-praca",
-    "categoria": "Pantanal",
+    "categoria": "Hospedagem",
     "cor": "#0F3D2A",
     "descricao": "Acomodações confortáveis localizadas no point central da cidade, exatamente na Praça da Liberdade.",
     "fotos": [
@@ -143,7 +146,7 @@ const destinos = [
     "id": 8,
     "nome": "Hotel Bonsai",
     "slug": "hotel-bonsai",
-    "categoria": "Pantanal",
+    "categoria": "Hospedagem",
     "cor": "#0F3D2A",
     "descricao": "Ambiente acolhedor e familiar a poucos passos do centro comercial, cercado por jardins e área de lazer.",
     "fotos": [
@@ -182,7 +185,7 @@ const destinos = [
     "id": 10,
     "nome": "Hotel Pousada do Bosque",
     "slug": "hotel-pousada-do-bosque",
-    "categoria": "Pantanal",
+    "categoria": "Hospedagem",
     "cor": "#0F3D2A",
     "descricao": "Hotel tradicional e muito arborizado em Ponta Porã, a apenas alguns minutos da fronteira paraguaia.",
     "fotos": [
