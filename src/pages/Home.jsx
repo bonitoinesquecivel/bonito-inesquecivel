@@ -2,6 +2,7 @@ import Header from '../components/Header/Header.jsx'
 import Hero from '../components/Hero/Hero.jsx'
 import DestinosGrid from '../components/DestinosGrid/DestinosGrid.jsx'
 import SobreBonito from '../components/SobreBonito/SobreBonito.jsx'
+import PacoteSugerido from '../components/PacoteSugerido/PacoteSugerido.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import styles from './Home.module.css'
 
@@ -34,6 +35,7 @@ export default function Home() {
             Abrir Mapa de Bonito (PDF)
           </a>
         </section>
+        <PacoteSugerido />
         <SobreBonito />
       </main>
       <Footer />
