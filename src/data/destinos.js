@@ -38,12 +38,17 @@ const destinos = [
     "imagemPrincipal": "/parque-das-cachoeiras/foto-4.jpg",
     "fotos": [
       "/parque-das-cachoeiras/foto-1.jpg",
-      "/parque-das-cachoeiras/foto-3.jpg",
       "/parque-das-cachoeiras/foto-4.jpg",
       "/parque-das-cachoeiras/foto-5.jpg",
       "/parque-das-cachoeiras/foto-7.jpg",
       "/parque-das-cachoeiras/foto-8.jpg",
-      "/parque-das-cachoeiras/foto-9.jpg"
+      "/parque-das-cachoeiras/foto-9.jpg",
+      "/parque-das-cachoeiras/foto-10.jpg",
+      "/parque-das-cachoeiras/foto-11.jpg",
+      "/parque-das-cachoeiras/foto-12.jpg",
+      "/parque-das-cachoeiras/foto-13.jpg",
+      "/parque-das-cachoeiras/foto-14.jpg",
+      "/parque-das-cachoeiras/foto-15.jpg"
     ]
   },
   {
@@ -70,12 +75,16 @@ const destinos = [
     "descricao": "A maior dolina da América do Sul e refúgio espetacular para observação de araras-vermelhas.",
     "imagemPrincipal": "/buraco-das-araras/foto-3.jpg",
     "fotos": [
+      "/buraco-das-araras/foto-8.jpg",
       "/buraco-das-araras/foto-1.jpg",
       "/buraco-das-araras/foto-2.jpg",
       "/buraco-das-araras/foto-3.jpg",
       "/buraco-das-araras/foto-4.jpg",
       "/buraco-das-araras/foto-5.jpg",
-      "/buraco-das-araras/foto-7.jpg"
+      "/buraco-das-araras/foto-7.jpg",
+      "/buraco-das-araras/foto-9.jpg",
+      "/buraco-das-araras/foto-10.jpg",
+      "/buraco-das-araras/foto-11.jpg"
     ]
   },
   {
