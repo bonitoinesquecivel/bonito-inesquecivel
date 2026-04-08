@@ -50,10 +50,7 @@
   display: flex;
   gap: 1rem;
   padding-bottom: 1rem;
-  /* Scroll snap — ativo em tablet/mobile, passivo em desktop */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: visible;
   scrollbar-width: none;
 }
 
@@ -62,8 +59,8 @@
 }
 
 .item {
-  /* Largura fixa para carrossel; no desktop 5 cabem sem scroll */
-  flex: 0 0 220px;
+  flex: 1 1 0;
+  min-width: 0;
   scroll-snap-align: start;
   list-style: none;
 }
@@ -150,22 +147,24 @@
 
 /* Botão WhatsApp */
 .waBtn {
+  --wa-green: #25D366;
+  --wa-green-hover: #1ebe5d;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #25D366;
+  background: var(--wa-green);
   color: var(--color-white);
   font-size: 0.78rem;
   font-weight: 700;
   padding: 0.4rem 0.75rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-top: 0.4rem;
   width: fit-content;
   transition: background var(--transition);
 }
 
 .waBtn:hover {
-  background: #1ebe5d;
+  background: var(--wa-green-hover);
 }
 
 /* ---------- Rodapé com preço ---------- */
@@ -223,21 +222,14 @@
 
 /* ---------- Responsivo ---------- */
 
-/* Desktop largo: 5 cards sem scroll */
-@media (min-width: 1100px) {
+/* Tablet e abaixo: ativa carrossel com scroll */
+@media (max-width: 1099px) {
   .carousel {
-    overflow-x: visible;
-    scroll-snap-type: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 1.5rem;
   }
 
-  .item {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1099px) and (min-width: 768px) {
   .item {
     flex: 0 0 260px;
   }
@@ -246,7 +238,7 @@
 /* Mobile */
 @media (max-width: 767px) {
   .section {
-    padding: 0 0 3rem;
+    padding-bottom: 3rem;
   }
 
   .container {
@@ -260,13 +252,10 @@
 
   .carousel {
     padding: 0 1.5rem 1rem;
-    /* Revela próximo card */
-    scroll-padding-left: 1.5rem;
   }
 
   .item {
     flex: 0 0 80vw;
-    max-width: 300px;
   }
 
   .preco {
