@@ -1,6 +1,7 @@
 import styles from './PacoteSugerido.module.css'
 
-const WA_LINK = 'https://wa.me/5567992834917'
+const waLink = (msg) =>
+  `https://wa.me/5567992834917?text=${encodeURIComponent(msg)}`
 
 /* Ícones SVG inline — estilo stroke, cor herdada */
 const IconCama = () => (
@@ -137,7 +138,7 @@ export default function PacoteSugerido() {
                   <h3 className={styles.nome}>{nome}</h3>
                   <p className={styles.detalhe}>{detalhe}</p>
                   <a
-                    href={WA_LINK}
+                    href={waLink(`Olá! Vim pelo site Bonito Inesquecível e tenho interesse em saber mais sobre: ${nome}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.waBtn}
@@ -158,7 +159,7 @@ export default function PacoteSugerido() {
           <p className={styles.precoValor}>R$ 1.175,00</p>
           <p className={styles.precoComplemento}>por pessoa · base duas pessoas</p>
           <a
-            href={WA_LINK}
+            href={waLink('Olá! Vim pelo site Bonito Inesquecível e gostaria de solicitar o Pacote para Bonito (a partir de R$ 1.175,00 por pessoa). Podem me passar mais informações?')}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaBtn}

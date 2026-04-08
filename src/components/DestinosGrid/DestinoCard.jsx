@@ -75,7 +75,7 @@ export default function DestinoCard({ destino }) {
         <h3 className={styles.nome}>{destino.nome}</h3>
         <p className={styles.descricao}>{destino.descricao}</p>
         <a 
-          href="https://wa.me/5567992834917" 
+          href={`https://wa.me/5567992834917?text=${encodeURIComponent(`Olá! Vim pelo site Bonito Inesquecível e tenho interesse em saber mais sobre ${destino.nome}.`)}`}
           target="_blank" 
           rel="noopener noreferrer"
           style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#25D366', color: '#fff', padding: '0.4rem 0.8rem', borderRadius: '4px', textDecoration: 'none', marginTop: '1rem', fontSize: '0.8rem', fontWeight: 'bold', width: 'fit-content' }}
