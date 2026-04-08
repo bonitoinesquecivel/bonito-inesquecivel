@@ -102,7 +102,7 @@ const IconWhatsApp = () => (
    ============================================================ */
 export default function PacoteSugerido() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
+    align: 'center',
     containScroll: 'trimSnaps',
     dragFree: false,
     breakpoints: {
