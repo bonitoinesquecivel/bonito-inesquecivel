@@ -1,0 +1,58 @@
+.mapaSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem 4rem;
+  background: var(--color-gelo);
+}
+
+.mapaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-width: 260px;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-verde);
+  background: var(--color-verde);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.mapaIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.mapaButton:hover {
+  background: var(--color-verde-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.mapaButton:focus-visible {
+  outline: 3px solid var(--color-areia);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .mapaSection {
+    padding: 0 1rem 3rem;
+  }
+
+  .mapaButton {
+    width: 100%;
+    max-width: 320px;
+  }
+}
