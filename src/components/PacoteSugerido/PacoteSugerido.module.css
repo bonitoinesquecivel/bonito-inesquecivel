@@ -1,5 +1,5 @@
 /* ============================================================
-   PACOTE SUGERIDO — seção com cards e carrossel mobile
+   PACOTE SUGERIDO — seção com cards e carrossel Embla
    ============================================================ */
 
 .section {
@@ -50,55 +50,23 @@
   position: relative;
 }
 
-/* Setas — visíveis apenas no carrossel (tablet/mobile) */
-.arrow {
-  display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 50%;
-  background: var(--color-white);
-  color: var(--color-verde);
-  box-shadow: var(--shadow-md);
-  border: none;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition), color var(--transition), transform var(--transition);
+/* ---------- Embla ---------- */
+.emblaViewport {
+  overflow: hidden;
 }
 
-.arrow:hover {
-  background: var(--color-verde);
-  color: var(--color-white);
-  transform: translateY(-50%) scale(1.08);
-}
-
-.arrowPrev { left: -1rem; }
-.arrowNext { right: -1rem; }
-
-/* ---------- Carrossel / grid ---------- */
-.carousel {
+.emblaContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 1rem;
-  padding-bottom: 1rem;
-  scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.item {
-  /* Desktop: 3 por linha — os 2 da segunda linha ficam centralizados */
-  flex: 0 0 calc((100% - 2rem) / 3);
-  min-width: 0;
-  scroll-snap-align: start;
   list-style: none;
+  margin: 0;
+  padding: 0 0 1rem;
+}
+
+.emblaSlide {
+  /* Carrossel: cada slide ocupa ~80% da viewport */
+  flex: 0 0 78%;
+  min-width: 0;
 }
 
 /* ---------- Card ---------- */
@@ -203,6 +171,34 @@
   background: var(--wa-green-hover);
 }
 
+/* ---------- Setas ---------- */
+.arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-verde);
+  box-shadow: var(--shadow-md);
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.arrow:hover {
+  background: var(--color-verde);
+  color: var(--color-white);
+}
+
+.arrowPrev { left: -1.2rem; }
+.arrowNext { right: -1.2rem; }
+
 /* ---------- Rodapé com preço ---------- */
 .preco {
   display: flex;
@@ -258,22 +254,30 @@
 
 /* ---------- Responsivo ---------- */
 
-/* Tablet e abaixo: desativa grid, ativa carrossel com scroll */
+/* Tablet: slides maiores, setas visíveis */
 @media (max-width: 1099px) {
-  .carousel {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 1.5rem;
-  }
-
-  .item {
+  .emblaSlide {
     flex: 0 0 260px;
   }
 
   .arrow {
     display: flex;
+  }
+}
+
+/* Desktop: Embla desativado via breakpoints config — exibe grid 3+2 */
+@media (min-width: 1100px) {
+  .emblaViewport {
+    overflow: visible;
+  }
+
+  .emblaContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .emblaSlide {
+    flex: 0 0 calc((100% - 2rem) / 3);
   }
 }
 
@@ -284,32 +288,25 @@
   }
 
   .container {
-    padding: 0;
+    padding: 0 1.5rem;
   }
 
   .sectionHeader {
-    padding: 0 1.5rem;
     margin-bottom: 1.5rem;
   }
 
-  .carouselWrapper {
-    padding: 0 2.8rem;
+  .emblaSlide {
+    flex: 0 0 82%;
   }
 
-  .carousel {
-    padding: 0 0 1rem;
-    scroll-padding-left: 0;
+  .arrow {
+    display: flex;
   }
 
-  .arrowPrev { left: 0; }
-  .arrowNext { right: 0; }
-
-  .item {
-    flex: 0 0 80vw;
-  }
+  .arrowPrev { left: -1rem; }
+  .arrowNext { right: -1rem; }
 
   .preco {
-    padding: 0 1.5rem;
     margin-top: 2rem;
   }
 }

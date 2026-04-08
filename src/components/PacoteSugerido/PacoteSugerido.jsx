@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import styles from './PacoteSugerido.module.css'
 
 const waLink = (msg) =>
@@ -101,14 +101,17 @@ const IconWhatsApp = () => (
    PACOTE SUGERIDO — seção com cards de pacote turístico
    ============================================================ */
 export default function PacoteSugerido() {
-  const carouselRef = useRef(null)
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: false,
+    breakpoints: {
+      '(min-width: 1100px)': { active: false },
+    },
+  })
 
-  const scroll = (dir) => {
-    const el = carouselRef.current
-    if (!el) return
-    const cardWidth = el.querySelector('li')?.offsetWidth ?? 260
-    el.scrollBy({ left: dir * (cardWidth + 16), behavior: 'smooth' })
-  }
+  const scrollPrev = () => emblaApi?.scrollPrev()
+  const scrollNext = () => emblaApi?.scrollNext()
 
   return (
     <section className={styles.section} aria-label="Sugestão de pacote turístico para Bonito">
@@ -122,64 +125,56 @@ export default function PacoteSugerido() {
           </p>
         </div>
 
-        {/* Carrossel / grid de cards */}
+        {/* Carrossel (mobile/tablet) / grid (desktop) */}
         <div className={styles.carouselWrapper}>
-          <button
-            className={`${styles.arrow} ${styles.arrowPrev}`}
-            onClick={() => scroll(-1)}
-            aria-label="Card anterior"
-          >
+          {/* Seta anterior */}
+          <button className={`${styles.arrow} ${styles.arrowPrev}`} onClick={scrollPrev} aria-label="Card anterior">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M15 18l-6-6 6-6"/>
             </svg>
           </button>
 
-          <ul
-            ref={carouselRef}
-            className={styles.carousel}
-            role="list"
-            aria-label="Itens incluídos no pacote"
-          >
-          {ITENS.map(({ id, nome, tag, detalhe, imagem, Icone }) => (
-            <li key={id} className={styles.item}>
-              <article className={styles.card} aria-label={nome}>
-                {/* Foto de capa */}
-                <div
-                  className={styles.visual}
-                  style={{ backgroundImage: `url(${imagem})` }}
-                  aria-hidden="true"
-                >
-                  <span className={styles.tag}>{tag}</span>
-                  <div className={styles.iconWrapper} aria-hidden="true">
-                    <Icone />
-                  </div>
-                </div>
+          {/* Viewport do Embla */}
+          <div className={styles.emblaViewport} ref={emblaRef}>
+            <ul className={styles.emblaContainer} role="list" aria-label="Itens incluídos no pacote">
+              {ITENS.map(({ id, nome, tag, detalhe, imagem, Icone }) => (
+                <li key={id} className={styles.emblaSlide}>
+                  <article className={styles.card} aria-label={nome}>
+                    {/* Foto de capa */}
+                    <div
+                      className={styles.visual}
+                      style={{ backgroundImage: `url(${imagem})` }}
+                      aria-hidden="true"
+                    >
+                      <span className={styles.tag}>{tag}</span>
+                      <div className={styles.iconWrapper} aria-hidden="true">
+                        <Icone />
+                      </div>
+                    </div>
 
-                {/* Informações */}
-                <div className={styles.info}>
-                  <h3 className={styles.nome}>{nome}</h3>
-                  <p className={styles.detalhe}>{detalhe}</p>
-                  <a
-                    href={waLink(`Olá! Vim pelo site Bonito Inesquecível e tenho interesse em saber mais sobre: ${nome}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.waBtn}
-                    aria-label={`Saiba mais sobre ${nome} via WhatsApp`}
-                  >
-                    <IconWhatsApp />
-                    Saiba mais
-                  </a>
-                </div>
-              </article>
-            </li>
-          ))}
-          </ul>
+                    {/* Informações */}
+                    <div className={styles.info}>
+                      <h3 className={styles.nome}>{nome}</h3>
+                      <p className={styles.detalhe}>{detalhe}</p>
+                      <a
+                        href={waLink(`Olá! Vim pelo site Bonito Inesquecível e tenho interesse em saber mais sobre: ${nome}.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.waBtn}
+                        aria-label={`Saiba mais sobre ${nome} via WhatsApp`}
+                      >
+                        <IconWhatsApp />
+                        Saiba mais
+                      </a>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <button
-            className={`${styles.arrow} ${styles.arrowNext}`}
-            onClick={() => scroll(1)}
-            aria-label="Próximo card"
-          >
+          {/* Seta próxima */}
+          <button className={`${styles.arrow} ${styles.arrowNext}`} onClick={scrollNext} aria-label="Próximo card">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 18l6-6-6-6"/>
             </svg>
