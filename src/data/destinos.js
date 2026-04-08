@@ -106,7 +106,15 @@ const destinos = [
       "/balneario-jardim-ecopark/foto-9.jpg",
       "/balneario-jardim-ecopark/foto-10.webp",
       "/balneario-jardim-ecopark/foto-11.jpg",
-      "/balneario-jardim-ecopark/foto-12.jpg"
+      "/balneario-jardim-ecopark/foto-12.jpg",
+      "/balneario-jardim-ecopark/foto-13.jpg",
+      "/balneario-jardim-ecopark/foto-14.jpg",
+      "/balneario-jardim-ecopark/foto-15.jpg",
+      "/balneario-jardim-ecopark/foto-16.jpg",
+      "/balneario-jardim-ecopark/foto-17.jpg",
+      "/balneario-jardim-ecopark/foto-18.jpg",
+      "/balneario-jardim-ecopark/foto-19.jpg",
+      "/balneario-jardim-ecopark/foto-20.jpg"
     ],
     "imagemPrincipal": "/balneario-jardim-ecopark/foto-1.jpg"
   },
