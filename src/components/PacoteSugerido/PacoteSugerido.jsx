@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import styles from './PacoteSugerido.module.css'
 
 const waLink = (msg) =>
@@ -100,6 +101,15 @@ const IconWhatsApp = () => (
    PACOTE SUGERIDO — seção com cards de pacote turístico
    ============================================================ */
 export default function PacoteSugerido() {
+  const carouselRef = useRef(null)
+
+  const scroll = (dir) => {
+    const el = carouselRef.current
+    if (!el) return
+    const cardWidth = el.querySelector('li')?.offsetWidth ?? 260
+    el.scrollBy({ left: dir * (cardWidth + 16), behavior: 'smooth' })
+  }
+
   return (
     <section className={styles.section} aria-label="Sugestão de pacote turístico para Bonito">
       <div className={styles.container}>
@@ -113,11 +123,23 @@ export default function PacoteSugerido() {
         </div>
 
         {/* Carrossel / grid de cards */}
-        <ul
-          className={styles.carousel}
-          role="list"
-          aria-label="Itens incluídos no pacote"
-        >
+        <div className={styles.carouselWrapper}>
+          <button
+            className={`${styles.arrow} ${styles.arrowPrev}`}
+            onClick={() => scroll(-1)}
+            aria-label="Card anterior"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <ul
+            ref={carouselRef}
+            className={styles.carousel}
+            role="list"
+            aria-label="Itens incluídos no pacote"
+          >
           {ITENS.map(({ id, nome, tag, detalhe, imagem, Icone }) => (
             <li key={id} className={styles.item}>
               <article className={styles.card} aria-label={nome}>
@@ -151,7 +173,18 @@ export default function PacoteSugerido() {
               </article>
             </li>
           ))}
-        </ul>
+          </ul>
+
+          <button
+            className={`${styles.arrow} ${styles.arrowNext}`}
+            onClick={() => scroll(1)}
+            aria-label="Próximo card"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
 
         {/* Rodapé com preço e CTA */}
         <div className={styles.preco}>
