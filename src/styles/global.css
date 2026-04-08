@@ -8,36 +8,36 @@
    ============================================================ */
 :root {
   /* Paleta principal */
-  --color-verde:    #1B3A2D;
-  --color-areia:    #D4A95A;
-  --color-cristal:  #4FC3D0;
-  --color-gelo:     #F5F5EF;
+  --color-verde: #345f4e;
+  --color-areia: #D4A95A;
+  --color-cristal: #4FC3D0;
+  --color-gelo: #F5F5EF;
 
   /* Derivadas */
-  --color-verde-light:   #234d3c;
-  --color-verde-dark:    #112418;
-  --color-areia-light:   #e8c07a;
-  --color-cristal-dark:  #35a3b0;
-  --color-text:          #1a1a1a;
-  --color-text-muted:    #555f5b;
-  --color-bg:            #F5F5EF;
-  --color-white:         #ffffff;
+  --color-verde-light: #234d3c;
+  --color-verde-dark: #345f4e;
+  --color-areia-light: #fff4d6;
+  --color-cristal-dark: #35a3b0;
+  --color-text: #1a1a1a;
+  --color-text-muted: #555f5b;
+  --color-bg: #F5F5EF;
+  --color-white: #ffffff;
 
   /* Tipografia */
   --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 
   /* Espaçamentos */
   --section-padding: 5rem 1.5rem;
   --max-width: 1200px;
 
   /* Bordas / sombras */
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
-  --shadow-sm:  0 2px 8px rgba(0,0,0,.08);
-  --shadow-md:  0 6px 24px rgba(0,0,0,.12);
-  --shadow-lg:  0 16px 48px rgba(0,0,0,.18);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .08);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, .12);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, .18);
 
   /* Transições */
   --transition: 0.28s ease;
@@ -46,7 +46,9 @@
 /* ============================================================
    RESET & BASE
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -76,7 +78,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -102,6 +105,6 @@ button {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }

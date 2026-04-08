@@ -36,11 +36,7 @@ export default function Header() {
       <div className={styles.inner}>
         {/* Logo */}
         <Link to="/" className={styles.logo} aria-label="Bonito Inesquecível Oficial — Home">
-          <span className={styles.logoIcon}>B</span>
-          <span className={styles.logoText}>
-            Bonito e <strong>Pantanal</strong>
-            <span style={{ fontSize: '0.65em' }}>Mato Grosso do Sul</span>
-          </span>
+          <img src="/logo.png" alt="Bonito & Pantanal Sul" className={styles.logoImage} />
         </Link>
 
         {/* Nav desktop */}
