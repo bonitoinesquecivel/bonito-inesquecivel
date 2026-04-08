@@ -124,7 +124,40 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottomMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.bottomContact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
+  background: #25D366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .copyright,
@@ -150,12 +183,39 @@
 }
 
 @media (max-width: 560px) {
+  .top {
+    text-align: center;
+  }
+
+  .brand {
+    align-items: center;
+  }
+
+  .tagline {
+    margin: 0 auto;
+  }
+
+  .linkGroup {
+    align-items: center;
+  }
+
   .linksGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bottomMeta {
+    align-items: center;
+  }
+
+  .bottomContact {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
   }
 }

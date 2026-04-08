@@ -4,31 +4,6 @@ import styles from './SobreBonito.module.css'
    SOBRE BONITO — descrição do destino + estatísticas visuais
    ============================================================ */
 
-const estatisticas = [
-  {
-    icone: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-        <path d="M2 12h4m12 0h4M12 2v4m0 12v4"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    ),
-    valor: 'Águas',
-    label: 'Cristalinas',
-    descricao: 'Visibilidade de até 40m em rios e dolinas',
-  },
-  {
-    icone: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
-    ),
-    valor: 'Patrimônio',
-    label: 'Natural',
-    descricao: 'Reconhecido pela UNESCO e MMA',
-  },
-]
-
 export default function SobreBonito() {
   return (
     <section id="sobre" className={styles.section}>
@@ -83,18 +58,28 @@ export default function SobreBonito() {
 
         {/* Estatísticas visuais */}
         <ul className={styles.statsGrid} role="list">
-          {estatisticas.map(stat => (
-            <li key={stat.label} className={styles.statCard}>
-              <div className={styles.statIcon}>{stat.icone}</div>
-              <div className={styles.statContent}>
-                <div className={styles.statValor}>
-                  <strong>{stat.valor}</strong>
-                  <span>{stat.label}</span>
-                </div>
-                <p className={styles.statDescricao}>{stat.descricao}</p>
+          <li className={`${styles.statCard} ${styles.sealCard}`}>
+            <img
+              src="/selo-ecoturismo.png"
+              alt="Selo de ecoturismo"
+              className={styles.sealImage}
+            />
+          </li>
+
+          <li className={styles.statCard}>
+            <div className={styles.statIcon}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div className={styles.statContent}>
+              <div className={styles.statValor}>
+                <strong>Melhor destino</strong>
+                <span>de ecoturismo do Brasil</span>
               </div>
-            </li>
-          ))}
+              <p className={styles.statDescricao}>Reconhecimento nacional em turismo de natureza</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>

@@ -186,8 +186,13 @@
 /* ---- Estatísticas grid ---- */
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: fit-content(220px) fit-content(560px);
   gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .statCard {
@@ -199,6 +204,8 @@
   background: var(--color-gelo);
   border: 1px solid rgba(27, 58, 45, .08);
   transition: box-shadow var(--transition), transform var(--transition);
+  width: fit-content;
+  max-width: 100%;
 }
 
 .statCard:hover {
@@ -254,12 +261,43 @@
   line-height: 1.5;
 }
 
+.sealCard {
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.sealCard:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.sealImage {
+  width: min(100%, 180px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     margin-bottom: 3.5rem;
+  }
+
+  .textCol {
+    align-items: center;
+    text-align: center;
+  }
+
+  .body {
+    max-width: 68ch;
+    margin: 0 auto;
   }
 
   .floatCard {
@@ -269,6 +307,37 @@
 
   .statsGrid {
     grid-template-columns: 1fr;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .statCard {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .statCard:not(.sealCard) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sealCard {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .statContent,
+  .statValor {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .statValor {
+    flex-direction: column;
+    gap: 0.15rem;
   }
 }
 
