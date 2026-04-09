@@ -41,7 +41,7 @@
 }
 
 .logoImage {
-  height: 64px;
+  height: 128px;
   width: auto;
   object-fit: contain;
   opacity: 0.9;
@@ -157,6 +157,12 @@
   color: rgba(255, 255, 255, .5);
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.whatsappWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .whatsappBtn {
