@@ -36,11 +36,7 @@ export default function Header() {
       <div className={styles.inner}>
         {/* Logo */}
         <Link to="/" className={styles.logo} aria-label="Bonito Inesquecível Oficial — Home">
-          <span className={styles.logoIcon}>B</span>
-          <span className={styles.logoText}>
-            Bonito <strong>Inesquecível</strong>
-            <em>Oficial</em>
-          </span>
+          <img src={scrolled ? "/logo-2.webp" : "/logo.webp"} alt="Bonito & Pantanal Sul" className={styles.logoImage} />
         </Link>
 
         {/* Nav desktop */}

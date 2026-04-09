@@ -266,6 +266,12 @@
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 12rem;
+  }
+}
+
 @media (max-width: 480px) {
   .stats {
     gap: 1.5rem;

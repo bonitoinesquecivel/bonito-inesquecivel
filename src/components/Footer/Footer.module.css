@@ -3,7 +3,7 @@
    ============================================================ */
 .footer {
   background: var(--color-verde-dark);
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, .75);
   padding: 4rem 1.5rem 2rem;
 }
 
@@ -27,6 +27,12 @@
   gap: 1rem;
 }
 
+.logosContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .logo {
   display: inline-flex;
   align-items: center;
@@ -40,15 +46,20 @@
   object-fit: contain;
   opacity: 0.9;
   transition: opacity var(--transition);
+  border-radius: 20px;
 }
 
 .logoImage:hover {
   opacity: 1;
 }
 
+.jhFilter {
+  filter: brightness(0) invert(1);
+}
+
 .tagline {
   font-size: 0.9rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
   line-height: 1.6;
   max-width: 280px;
 }
@@ -66,15 +77,15 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,.15);
-  color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: rgba(255, 255, 255, .55);
   transition: border-color var(--transition), color var(--transition), background var(--transition);
 }
 
 .socialLink:hover {
   border-color: var(--color-cristal);
   color: var(--color-cristal);
-  background: rgba(79,195,208,.1);
+  background: rgba(79, 195, 208, .1);
 }
 
 /* ---- Links grid ---- */
@@ -102,7 +113,7 @@
 .footerLink {
   display: block;
   font-size: 0.9rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
   transition: color var(--transition);
   line-height: 1.8;
 }
@@ -114,7 +125,7 @@
 /* ---- Divisor ---- */
 .divider {
   border: none;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(255, 255, 255, .1);
   margin-bottom: 1.75rem;
 }
 
@@ -143,7 +154,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
   text-decoration: none;
   font-size: 0.9rem;
 }
@@ -160,10 +171,23 @@
   font-weight: 700;
 }
 
+.jhLogo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  transition: opacity var(--transition);
+}
+
+.jhLogo:hover {
+  opacity: 1;
+}
+
 .copyright,
 .credits {
   font-size: 0.82rem;
-  color: rgba(255,255,255,.35);
+  color: rgba(255, 255, 255, .35);
 }
 
 .credits {
