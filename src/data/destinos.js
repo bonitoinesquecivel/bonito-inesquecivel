@@ -120,7 +120,7 @@ const destinos = [
     "id": 6,
     "nome": "Pantanal Jungle Lodge",
     "slug": "pantanal-jungle-lodge",
-    "categoria": "Ecoturismo",
+    "categoria": "PANTANAL",
     "cor": "#0F3D2A",
     "descricao": "Hospedagem rústica em palafitas às margens do Rio Miranda para imersão e safári no coração do Pantanal.",
     "fotos": [

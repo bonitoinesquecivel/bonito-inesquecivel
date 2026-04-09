@@ -8,13 +8,12 @@ export default function SobreBonito() {
   return (
     <section id="sobre" className={styles.section}>
       <div className={styles.container}>
-        {/* Colunas: texto + imagem decorativa */}
+        {/* Coluna Bonito */}
         <div className={styles.layout}>
-          {/* Coluna esquerda — texto */}
           <div className={styles.textCol}>
-            <span className={styles.eyebrow}>Sobre os destinos</span>
+            <span className={styles.eyebrow}>Sobre o destino</span>
             <h2 className={styles.title}>
-              Bonito e Pantanal: a natureza <em>em sua forma&nbsp;mais selvagem</em>
+              Bonito: a natureza <em>em sua forma&nbsp;mais selvagem</em>
             </h2>
             <p className={styles.body}>
               Encravado no coração do Mato Grosso do Sul, Bonito é reconhecido
@@ -23,16 +22,8 @@ export default function SobreBonito() {
               permitem uma visibilidade rara — mergulhar ali é flutuar entre
               cardumes coloridos sem precisar ir ao mar.
             </p>
-            <p className={styles.body}>
-              O Pantanal é a maior planície alagável do planeta, um santuário
-              ecológico onde a vida selvagem vibra em cada canto. Safáris
-              fotográficos e passeios de chalana oferecem o espetáculo do
-              encontro com onças-pintadas, tuiuiús e a rica fauna brasileira.
-              Juntos, Bonito e Pantanal formam uma experiência inesquecível.
-            </p>
           </div>
 
-          {/* Coluna direita — decoração visual */}
           <div className={styles.visualCol} aria-hidden="true">
             <div className={styles.visualCard}>
               <div className={styles.visualInner}>
@@ -40,7 +31,7 @@ export default function SobreBonito() {
                 <div className={styles.ripple} />
                 <div className={styles.ripple2} />
                 <span className={styles.visualText}>Bonito, MS</span>
-                <span className={styles.visualSub}>Pantanal · Cerrado · Águas Cristalinas</span>
+                <span className={styles.visualSub}>Cerrado · Águas Cristalinas</span>
               </div>
             </div>
             {/* Card flutuante decorativo */}
@@ -56,6 +47,35 @@ export default function SobreBonito() {
           </div>
         </div>
 
+        {/* Coluna Pantanal */}
+        <div className={`${styles.layout} ${styles.layoutInvertido}`}>
+          <div className={styles.textCol}>
+            <span className={styles.eyebrow}>Sobre o destino</span>
+            <h2 className={styles.title}>
+              Pantanal: a vida pulsando <em>em cada canto</em>
+            </h2>
+            <p className={styles.body}>
+              O Pantanal é a maior planície alagável do planeta, um santuário
+              ecológico onde a vida selvagem vibra intensamente. Safáris
+              fotográficos e passeios de chalana oferecem o espetáculo do
+              encontro com onças-pintadas, tuiuiús e a rica fauna brasileira.
+              Uma experiência imersiva e inesquecível.
+            </p>
+          </div>
+
+          <div className={styles.visualCol} aria-hidden="true">
+            <div className={`${styles.visualCard} ${styles.visualCardPantanal}`}>
+              <div className={styles.visualInner}>
+                <div className={styles.blob} />
+                <div className={styles.ripple} />
+                <div className={styles.ripple2} />
+                <span className={styles.visualText}>Pantanal, MS</span>
+                <span className={styles.visualSub}>Maior Planície Alagável · Vida Selvagem</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Estatísticas visuais */}
         <ul className={styles.statsGrid} role="list">
           <li className={`${styles.statCard} ${styles.sealCard}`}>
@@ -66,20 +86,6 @@ export default function SobreBonito() {
             />
           </li>
 
-          <li className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </div>
-            <div className={styles.statContent}>
-              <div className={styles.statValor}>
-                <strong>Melhor destino</strong>
-                <span>de ecoturismo do Brasil</span>
-              </div>
-              <p className={styles.statDescricao}>Reconhecimento nacional em turismo de natureza</p>
-            </div>
-          </li>
         </ul>
       </div>
     </section>

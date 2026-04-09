@@ -73,6 +73,21 @@
   justify-content: center;
 }
 
+.visualCardPantanal {
+  background:
+    linear-gradient(135deg, rgba(8, 38, 27, 0.4) 0%, rgba(26, 92, 69, 0.3) 60%, rgba(15, 61, 42, 0.5) 100%),
+    url('/sobre-pantanal-img.jpeg') center/cover no-repeat;
+}
+
+@media (min-width: 901px) {
+  .layoutInvertido .textCol {
+    order: 2;
+  }
+  .layoutInvertido .visualCol {
+    order: 1;
+  }
+}
+
 .visualInner {
   position: relative;
   text-align: center;

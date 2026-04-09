@@ -194,7 +194,7 @@ export default function PacoteSugerido() {
             aria-label="Solicitar pacote para Bonito via WhatsApp"
           >
             <IconWhatsApp />
-            Solicitar este pacote
+            Informações aqui
           </a>
         </div>
       </div>
