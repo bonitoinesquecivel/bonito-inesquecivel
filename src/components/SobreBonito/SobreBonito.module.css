@@ -66,7 +66,7 @@
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(8, 38, 27, 0.4) 0%, rgba(26, 92, 69, 0.3) 60%, rgba(15, 61, 42, 0.5) 100%),
-    url('/sobre-img.jpeg') center/cover no-repeat;
+    url('/sobre-img.webp') center/cover no-repeat;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
 .visualCardPantanal {
   background:
     linear-gradient(135deg, rgba(8, 38, 27, 0.4) 0%, rgba(26, 92, 69, 0.3) 60%, rgba(15, 61, 42, 0.5) 100%),
-    url('/sobre-pantanal-img.jpeg') center/cover no-repeat;
+    url('/sobre-pantanal-img.webp') center/cover no-repeat;
 }
 
 @media (min-width: 901px) {

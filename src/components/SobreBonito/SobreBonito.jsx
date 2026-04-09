@@ -80,7 +80,7 @@ export default function SobreBonito() {
         <ul className={styles.statsGrid} role="list">
           <li className={`${styles.statCard} ${styles.sealCard}`}>
             <img
-              src="/selo-ecoturismo.png"
+              src="/selo-ecoturismo.webp"
               alt="Selo de ecoturismo"
               className={styles.sealImage}
             />

@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Identidade */}
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <img src="/logo.png" alt="Bonito & Pantanal Sul" className={styles.logoImage} />
+              <img src="/logo.webp" alt="Bonito & Pantanal Sul" className={styles.logoImage} />
             </Link>
             <p className={styles.tagline}>
               O portal definitivo do ecoturismo em Bonito-MS e Pantanal.

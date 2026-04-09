@@ -54,7 +54,7 @@ const ITENS = [
     nome: 'Hotel da Praça',
     tag: 'Hospedagem',
     detalhe: '3 diárias incluídas',
-    imagem: '/hotel-da-praca/foto-1.jpg',
+    imagem: '/hotel-da-praca/foto-1.webp',
     Icone: IconCama,
   },
   {
@@ -62,7 +62,7 @@ const ITENS = [
     nome: 'Praia da Figueira',
     tag: 'Day-use',
     detalhe: 'Flutuação e lazer',
-    imagem: '/praia-da-figueira/foto-1.jpg',
+    imagem: '/praia-da-figueira/foto-1.webp',
     Icone: IconOnda,
   },
   {
@@ -70,7 +70,7 @@ const ITENS = [
     nome: 'Parque das Cachoeiras',
     tag: 'Trilha',
     detalhe: 'Quedas do Rio Mimoso',
-    imagem: '/parque-das-cachoeiras/foto-4.jpg',
+    imagem: '/parque-das-cachoeiras/foto-4.webp',
     Icone: IconAgua,
   },
   {
@@ -78,7 +78,7 @@ const ITENS = [
     nome: 'Gruta Catedral',
     tag: 'Aventura',
     detalhe: 'Formações de estalactites',
-    imagem: '/gruta-catedral/foto-1.jpg',
+    imagem: '/gruta-catedral/foto-1.webp',
     Icone: IconCaverna,
   },
   {
@@ -86,7 +86,7 @@ const ITENS = [
     nome: 'Buraco das Araras',
     tag: 'Contemplação',
     detalhe: 'Maior dolina da América do Sul',
-    imagem: '/buraco-das-araras/foto-3.jpg',
+    imagem: '/buraco-das-araras/foto-3.webp',
     Icone: IconPassaro,
   },
 ]
